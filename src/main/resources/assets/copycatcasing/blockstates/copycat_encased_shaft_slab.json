@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "axis=x,half=bottom": { "model": "minecraft:block/air" },
+    "axis=x,half=top":    { "model": "minecraft:block/air" },
+    "axis=y,half=bottom": { "model": "minecraft:block/air" },
+    "axis=y,half=top":    { "model": "minecraft:block/air" },
+    "axis=z,half=bottom": { "model": "minecraft:block/air" },
+    "axis=z,half=top":    { "model": "minecraft:block/air" }
+  }
+}

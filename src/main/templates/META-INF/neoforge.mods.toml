@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="Boydsquirrel"
+logoFile="logo.png"
+description='''
+Encase Create shafts in any full block (white wool, stone, planks...) like a copycat.
+Includes a full-block and a slab version. Right-click with a block to encase, sneak + wrench to remove.
+'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.219,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="create"
+    type="required"
+    versionRange="[6.0.10,)"
+    ordering="AFTER"
+    side="BOTH"

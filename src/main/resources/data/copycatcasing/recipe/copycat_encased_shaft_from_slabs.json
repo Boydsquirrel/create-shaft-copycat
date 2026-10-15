@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    { "item": "copycatcasing:copycat_encased_shaft_slab" },
+    { "item": "copycatcasing:copycat_encased_shaft_slab" }
+  ],
+  "result": { "id": "copycatcasing:copycat_encased_shaft", "count": 1 }
+}

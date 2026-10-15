@@ -1,0 +1,6 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [ { "item": "create:shaft" }, { "item": "create:copycat_panel" } ],
+  "result": { "id": "copycatcasing:copycat_encased_shaft", "count": 1 }
+}

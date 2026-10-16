@@ -7,10 +7,8 @@ modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
 authors="Boydsquirrel"
-logoFile="logo.png"
 description='''
-Encase Create shafts in any full block (white wool, stone, planks...) like a copycat.
-Includes a full-block and a slab version. Right-click with a block to encase, sneak + wrench to remove.
+A wheel mount for Create Aeronautics (Offroad) that holds a tire on each side. Both tires get Offroad's suspension, steering and free rolling.
 '''
 
 [[dependencies.${mod_id}]]
@@ -31,5 +29,26 @@ Includes a full-block and a slab version. Right-click with a block to encase, sn
     modId="create"
     type="required"
     versionRange="[6.0.10,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="sable"
+    type="required"
+    versionRange="[2.0.0,3.0.0)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="simulated"
+    type="required"
+    versionRange="[1.2.1,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="offroad"
+    type="required"
+    versionRange="[1.2.1,)"
     ordering="AFTER"
     side="BOTH"

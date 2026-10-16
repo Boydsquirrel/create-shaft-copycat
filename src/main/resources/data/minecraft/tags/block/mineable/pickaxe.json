@@ -1,1 +1,5 @@
-{ "values": [ "copycatcasing:copycat_encased_shaft", "copycatcasing:copycat_encased_shaft_slab" ] }
+{
+  "values": [
+    "dualwheelmount:dual_wheel_mount"
+  ]
+}

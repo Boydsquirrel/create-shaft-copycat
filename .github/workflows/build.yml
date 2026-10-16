@@ -22,8 +22,18 @@ jobs:
       - name: Build
         run: gradle build --no-daemon
 
+      - name: Verify jar contents
+        run: |
+          jar=$(ls build/libs/*.jar | grep -v sources | head -1)
+          echo "Checking $jar"
+          unzip -l "$jar" | awk '{print $4}' | grep -E "^(com|dev|assets|data)/" | sed 's#/[^/]*$##' | sort -u | head -30
+          if unzip -l "$jar" | grep -E "copycatcasing|dev/ryanhcode"; then
+            echo "ERROR: the jar contains classes that would clash with other mods"
+            exit 1
+          fi
+
       - name: Upload jar
         uses: actions/upload-artifact@v4
         with:
-          name: copycatcasing-jar
+          name: dualwheelmount-jar
           path: build/libs/*.jar

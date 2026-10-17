@@ -18,7 +18,22 @@ jobs:
           gradle-version: 8.14.3
       - name: Build
         run: gradle build --no-daemon
-      - uses: actions/upload-artifact@v4
+
+      - name: Verify jar contents
+        run: |
+          jar=$(ls build/libs/*.jar | grep -v sources | head -1)
+          echo "Checking $jar"
+          echo "--- files in the jar (excluding folders):"
+          unzip -Z1 "$jar" | grep -v '/$' | grep -vE '^(META-INF|META-INF/)' | sort
+          # Fail only on real files (not empty folder entries) that would clash with other mods.
+          if unzip -Z1 "$jar" | grep -v '/$' | grep -E "copycatcasing|dev/ryanhcode"; then
+            echo "ERROR: the jar contains files that would clash with other mods"
+            exit 1
+          fi
+          echo "Jar contents look clean."
+
+      - name: Upload jar
+        uses: actions/upload-artifact@v4
         with:
           name: navlights-jar
           path: build/libs/*.jar

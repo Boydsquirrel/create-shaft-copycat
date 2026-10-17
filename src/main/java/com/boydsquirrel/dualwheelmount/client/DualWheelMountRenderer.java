@@ -35,6 +35,13 @@ import net.minecraft.world.phys.Vec3;
  */
 public class DualWheelMountRenderer extends KineticBlockEntityRenderer<DualWheelMountBlockEntity> {
 
+	/**
+	 * How far each wheel's centre is drawn from the centre of the mount block, in blocks (Offroad's own mount uses
+	 * 22/16). The physics treats the wheel as 1.0 away, so smaller values sit closer to what actually touches the
+	 * ground. Only the visuals change; the arm and spring geometry adapts automatically.
+	 */
+	private static final double WHEEL_DISTANCE = 18.0 / 16.0;
+
 	public DualWheelMountRenderer(BlockEntityRendererProvider.Context context) {
 		super(context);
 	}
@@ -71,7 +78,7 @@ public class DualWheelMountRenderer extends KineticBlockEntityRenderer<DualWheel
 		double springWheelPivotOffsetHor = 12.0 / 16.0;
 		double springWheelPivotOffsetVer = -2.0 / 16.0;
 
-		double horizontalWheelPosition = 22.0 / 16.0;
+		double horizontalWheelPosition = WHEEL_DISTANCE;
 		double verticalWheelPosition = -be.getLerpedExtension(index, partialTicks);
 
 		double teleMountHor = 0.0 / 16.0;
@@ -167,7 +174,8 @@ public class DualWheelMountRenderer extends KineticBlockEntityRenderer<DualWheel
 		ms.translate(-0.5, -0.5 - springMountVer, -0.5 + springMountHor);
 
 		float springExtension = (float) springDistance;
-		float springSpan = springExtension - 4.0f / 16.0f;
+		// never let the middle section scale negative (it would draw inside out) when fully compressed
+		float springSpan = Math.max(springExtension - 4.0f / 16.0f, 0.02f);
 
 		springTop.light(light)
 			.renderInto(ms, vb);

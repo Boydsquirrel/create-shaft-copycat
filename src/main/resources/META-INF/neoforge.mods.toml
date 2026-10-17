@@ -1,0 +1,26 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "MIT"
+
+[[mods]]
+modId = "navlights"
+version = "1.0.0"
+displayName = "Nav Lights"
+authors = "Boydsquirrel"
+description = '''
+Aircraft navigation lights for Create builds: dyeable redstone nav lights with a strobe mode, plus a taxi/landing floodlight with a visible beam.
+'''
+
+[[dependencies.navlights]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.navlights]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1,1.22)"
+ordering = "NONE"
+side = "BOTH"

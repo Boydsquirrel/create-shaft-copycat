@@ -1,0 +1,80 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "housing": "navlights:block/housing",
+    "lens": "navlights:block/lens",
+    "particle": "navlights:block/housing"
+  },
+  "elements": [
+    {
+      "from": [
+        5,
+        0,
+        5
+      ],
+      "to": [
+        11,
+        3,
+        11
+      ],
+      "faces": {
+        "down": {
+          "texture": "#housing"
+        },
+        "up": {
+          "texture": "#housing"
+        },
+        "north": {
+          "texture": "#housing"
+        },
+        "south": {
+          "texture": "#housing"
+        },
+        "east": {
+          "texture": "#housing"
+        },
+        "west": {
+          "texture": "#housing"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        3,
+        6
+      ],
+      "to": [
+        10,
+        6,
+        10
+      ],
+      "faces": {
+        "down": {
+          "texture": "#lens",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "#lens",
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "#lens",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "#lens",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "#lens",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "#lens",
+          "tintindex": 0
+        }
+      }
+    }
+  ]
+}

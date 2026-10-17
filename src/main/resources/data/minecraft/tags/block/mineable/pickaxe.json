@@ -1,5 +1,6 @@
 {
   "values": [
-    "dualwheelmount:dual_wheel_mount"
+    "navlights:nav_light",
+    "navlights:landing_light"
   ]
 }

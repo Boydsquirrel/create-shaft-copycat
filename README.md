@@ -1,33 +1,29 @@
-# Dual Wheel Mount
+# Nav Lights (NeoForge 1.21.1)
 
-An addon for **Create Aeronautics** (Offroad module) on **NeoForge 1.21.1**.
+Aircraft lights for Create builds. Works on Create contraptions, does not need Create installed.
 
-Adds the **Dual Wheel Mount**: one block that holds a tire on each side. Each tire behaves like it would on a normal
-Offroad Wheel Mount, including the suspension, steering from side redstone signals, and brakes.
+## Blocks
+**Nav Light** (dyeable, redstone toggled)
+- Place on the face you want it to point out of
+- Right-click with any dye to recolor (16 colors)
+- Right-click with an empty hand to toggle strobe (double flash every 2 seconds)
+- Glow gets bigger with distance so it is visible from far away (up to 256 blocks, limited by your render distance)
 
-## How it works
+**Landing Light** (not dyeable, redstone toggled)
+- Place on the face you want it to point out of
+- Visible cone about 35 blocks long and 13 wide at the far end
+- Beam stops at the first solid block and leaves a light pool on it
+- Lens flare is brightest when you look straight into it
 
-- **Placing:** the wheels end up on your left and right.
-- **Tires:** right-click either wheel side with a tire to mount it. Right-click with an empty hand to take it off.
-- **Power:** feed a rotating shaft into the top or bottom. Both wheels are driven.
-- **Free rolling:** unpowered wheels still roll with the vehicle, so a plane pushed by jet engines rolls on its own
-  and the tires spin with it.
-- **Steering:** redstone on the two sides next to the wheels, the same as the Offroad mount. Both wheels turn together.
-- **Brakes:** redstone on the top, like the Offroad mount, so connect the drive shaft from the bottom if you want brakes.
-- **Suspension strength:** use the value box on the side faces.
-- **Crafting:** 2 Wheel Mounts + 1 Shaft.
+Both give real block light while powered (nav 10, landing 15).
 
-## Requirements
+## Crafting
+- Nav Light x2: glass pane on top, redstone lamp in the middle, iron ingot on the bottom (one column)
+- Landing Light: iron ingots in the 4 corners, glass panes top/left/right of the center, glowstone in the center, redstone bottom middle
 
-- Minecraft 1.21.1, NeoForge 21.1.219+
-- Create 6.0.10+, Create Aeronautics (Simulated, Offroad, Sable 2.x)
+## Building with GitHub
+1. Make a new repo, upload everything in this folder (keep the `.github` folder)
+2. Go to the Actions tab, open the latest "Build mod" run
+3. Download the `navlights-jar` artifact at the bottom, unzip, drop the jar in your mods folder
 
-## Status
-
-Early prototype. The physics code is adapted from Offroad's wheel mount and has not been tested in game yet.
-
-## Credits and license
-
-The per-wheel suspension and rolling logic is adapted from the Create Aeronautics / Simulated project's Offroad
-module, which is MIT licensed (c) The Simulated Team / The Creators of Aeronautics. This mod does not include any of
-that project's textures or models; it references them at runtime from the Offroad mod.
+If the build says it cannot find the NeoForge version, change `neo_version` in gradle.properties to a newer 21.1.x.
